@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LoginContainer from "../pages/login";
 import RegisterContainer from "../pages/register";
 import ForgotPasswordContainer from "../pages/forgotPassword";
-import { navigationPage } from "../constants/navigationConstants";
+import { navigationPage } from "../constants/navigationConstant";
 
 const Stack = createStackNavigator();
 

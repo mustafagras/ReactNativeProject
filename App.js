@@ -1,5 +1,5 @@
 import CustomSafeAreaView from './src/components/wrapper';
-import MainNavigation from './src/navigation';
+import MainNavigation from './src/navigations';
 
 export default function App() {
   return (

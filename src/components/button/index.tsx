@@ -1,7 +1,7 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { CustomText, SignInText } from "../text";
-import { CustomButtonProps } from "../../type";
+import { CustomButtonProps } from "../../types";
 import styles from "./buttonStyle";
 
 const CustomButton = ({ tx, onPress }: CustomButtonProps) => {

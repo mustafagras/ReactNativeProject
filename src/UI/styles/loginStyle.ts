@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../Colors";
-import { width } from "../Sizes";
+import { colors } from "../Color";
+import { width } from "../Size";
 
 const loginStyle = StyleSheet.create({
   container: {

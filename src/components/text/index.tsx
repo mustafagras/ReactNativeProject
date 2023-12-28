@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TextStyle, StyleProp } from "react-native";
-import { CustomTextProps } from "../../type";
+import { CustomTextProps } from "../../types";
 import tr from "../../JSON/tr";
 
 const CustomText = ({ tx, style }: CustomTextProps) => {

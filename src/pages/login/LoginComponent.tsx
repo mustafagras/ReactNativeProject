@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TextInput, Image, TouchableOpacity } from "react-native";
 import { SignInButton } from "../../components/button";
-import { LoginComponentProps } from "../../type";
+import { LoginComponentProps } from "../../types";
 import loginStyle from "../../UI/styles/loginStyle";
 
 export default function LoginComponent(props: LoginComponentProps) {
