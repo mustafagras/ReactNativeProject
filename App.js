@@ -1,10 +1,10 @@
 import CustomSafeAreaView from './src/components/wrapper';
-import LoginContainer from './src/pages/login';
+import MainNavigation from './src/navigation';
 
 export default function App() {
   return (
     <CustomSafeAreaView>
-      <LoginContainer />
+      <MainNavigation />
     </CustomSafeAreaView>
   );
 };
