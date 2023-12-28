@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import styles from "./CustomSafeAreaStyle";
+import styles from "./safeAreaStyle";
 
 export default function CustomSafeAreaView({
   children,

@@ -34,4 +34,4 @@ const SignUpText = ({ tx, style }: CustomTextProps) => {
   return <Text style={style}>{signUpText}</Text>;
 };
 
-export { AuthText, CustomText, SignInText, SignUpText };
+export { CustomText, AuthText, SignInText, SignUpText };

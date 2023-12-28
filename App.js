@@ -1,4 +1,4 @@
-import CustomSafeAreaView from './src/components/wrapper/CustomSafeArea';
+import CustomSafeAreaView from './src/components/wrapper';
 import LoginContainer from './src/pages/login';
 
 export default function App() {
