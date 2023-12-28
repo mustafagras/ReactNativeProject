@@ -1,14 +1,15 @@
 import React from "react";
-import { View, TextInput, Image, TouchableOpacity } from "react-native";
+import { View, TextInput, Image } from "react-native";
 import { SignInButton } from "../../components/button";
 import { LoginComponentProps } from "../../types";
 import loginStyle from "../../UI/styles/loginStyle";
+import WhiteContainer from "../../components/whiteContainer";
 
 export default function LoginComponent(props: LoginComponentProps) {
   const { email, setEmail, password, setPassword } = props;
 
   return (
-    <View style={loginStyle.container}>
+    <WhiteContainer>
       <Image
         style={loginStyle.logo}
         resizeMode="contain"
@@ -31,6 +32,6 @@ export default function LoginComponent(props: LoginComponentProps) {
         />
         <SignInButton tx={"login"} onPress={() => console.log("Giris")} />
       </View>
-    </View>
+    </WhiteContainer>
   );
 }

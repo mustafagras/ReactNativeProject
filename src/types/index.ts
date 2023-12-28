@@ -18,6 +18,6 @@ export interface CustomTextProps {
   style?: StyleProp<TextStyle>;
 }
 
-export type CustomSafeAreaProps = {
-  children: JSX.Element;
+export type ChildrenProps = {
+  children: any;
 };
