@@ -1,7 +1,8 @@
 import React from "react";
 import { View, TextInput, Image, TouchableOpacity } from "react-native";
 import loginStyle from "../../UI/styles/loginStyle";
-import SignInText from "../../components/text";
+import { SignInText } from "../../components/text";
+import { SignInButton } from "../../components/button";
 
 interface LoginComponentProps {
   email: string;
@@ -30,16 +31,12 @@ export default function LoginComponent(props: LoginComponentProps) {
         <TextInput
           value={password}
           onChangeText={(text) => setPassword(text)}
+          keyboardType="default"
           secureTextEntry={true}
           style={loginStyle.input}
           placeholder="Password"
         />
-        <TouchableOpacity
-          style={loginStyle.button}
-          onPress={() => console.log("giris yap")}
-        >
-          <SignInText tx={"login"} style={loginStyle.buttonText} />
-        </TouchableOpacity>
+        <SignInButton tx={"login"} onPress={() => console.log("Giris")} />
       </View>
     </View>
   );
