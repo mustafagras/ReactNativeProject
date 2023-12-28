@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TextStyle, StyleProp } from "react-native";
+import { Text } from "react-native";
 import { CustomTextProps } from "../../types";
 import tr from "../../JSON/tr";
 
@@ -23,4 +23,9 @@ const SignUpText = ({ tx, style }: CustomTextProps) => {
   return <Text style={style}>{signUpText}</Text>;
 };
 
-export { CustomText, AuthText, SignInText, SignUpText };
+const ForgotPasswordText = ({ tx, style }: CustomTextProps) => {
+  const forgotPasswordText = tr[0].auth.forgotPassword[tx];
+  return <Text style={style}>{forgotPasswordText}</Text>;
+};
+
+export { CustomText, AuthText, SignInText, SignUpText, ForgotPasswordText };

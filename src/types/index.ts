@@ -10,6 +10,7 @@ export interface LoginComponentProps {
 export interface CustomButtonProps {
   tx: string;
   onPress: () => void;
+  color?: string;
 }
 
 export interface CustomTextProps {

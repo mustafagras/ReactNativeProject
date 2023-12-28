@@ -48,6 +48,10 @@ const tr = [
         checkFour: "En az 1 özel karakter",
         checkPassword: "Şifre Doğrulama",
       },
+      forgotPassword: {
+        forgotPassword: "Şifremi Unuttum",
+        title: "Şifremi Unuttum",
+      },
     },
   },
 ];

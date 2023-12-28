@@ -1,9 +1,14 @@
 import React from "react";
 import { View, TextInput, Image } from "react-native";
-import { SignInButton } from "../../components/button";
+import {
+  ForgotPasswordButton,
+  SignInButton,
+  SignUpButton,
+} from "../../components/button";
 import { LoginComponentProps } from "../../types";
 import loginStyle from "../../UI/styles/loginStyle";
 import WhiteContainer from "../../components/whiteContainer";
+import { colors } from "../../UI/Color";
 
 export default function LoginComponent(props: LoginComponentProps) {
   const { email, setEmail, password, setPassword } = props;
@@ -30,7 +35,21 @@ export default function LoginComponent(props: LoginComponentProps) {
           style={loginStyle.input}
           placeholder="Password"
         />
-        <SignInButton tx={"login"} onPress={() => console.log("Giris")} />
+        <SignInButton
+          tx={"login"}
+          color={colors.indianred}
+          onPress={() => console.log("Giris")}
+        />
+        <SignUpButton
+          tx={"register"}
+          color={colors.lightseagreen}
+          onPress={() => console.log("Kaydol")}
+        />
+        <ForgotPasswordButton
+          tx={"forgotPassword"}
+          color={colors.black}
+          onPress={() => console.log("Şifremi Unuttum")}
+        />
       </View>
     </WhiteContainer>
   );
