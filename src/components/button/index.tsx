@@ -1,12 +1,8 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { CustomText, SignInText } from "../text";
+import { CustomButtonProps } from "../../type";
 import styles from "./buttonStyle";
-
-interface CustomButtonProps {
-  tx: string;
-  onPress: () => void;
-}
 
 const CustomButton = ({ tx, onPress }: CustomButtonProps) => {
   return (

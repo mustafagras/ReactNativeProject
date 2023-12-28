@@ -1,15 +1,8 @@
 import React from "react";
 import { View, TextInput, Image, TouchableOpacity } from "react-native";
-import loginStyle from "../../UI/styles/loginStyle";
-import { SignInText } from "../../components/text";
 import { SignInButton } from "../../components/button";
-
-interface LoginComponentProps {
-  email: string;
-  password: string;
-  setEmail: (params: string) => void;
-  setPassword: (params: string) => void;
-}
+import { LoginComponentProps } from "../../type";
+import loginStyle from "../../UI/styles/loginStyle";
 
 export default function LoginComponent(props: LoginComponentProps) {
   const { email, setEmail, password, setPassword } = props;
