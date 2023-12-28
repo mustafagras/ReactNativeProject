@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import LoginComponent from "./LoginComponent";
 
 export default function LoginContainer() {
-  return <LoginComponent />;
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  return (
+    <LoginComponent
+      email={email}
+      setEmail={setEmail}
+      password={password}
+      setPassword={setPassword}
+    />
+  );
 }

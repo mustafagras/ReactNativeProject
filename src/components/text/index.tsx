@@ -14,6 +14,6 @@ type CustomTextProps = {
 };
 
 export default function SignInText({ tx, style }: CustomTextProps) {
-  const lastText: any = tr[0].auth.signIn[tx];
-  return <Text style={style}>{lastText}</Text>;
+  const signInText: any = tr[0].auth.signIn[tx];
+  return <Text style={style}>{signInText}</Text>;
 }

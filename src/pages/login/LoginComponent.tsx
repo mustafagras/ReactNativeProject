@@ -3,7 +3,16 @@ import { View, TextInput, Image, TouchableOpacity } from "react-native";
 import loginStyle from "../../UI/styles/loginStyle";
 import SignInText from "../../components/text";
 
-export default function LoginComponent() {
+interface LoginComponentProps {
+  email: string;
+  password: string;
+  setEmail: (params: string) => void;
+  setPassword: (params: string) => void;
+}
+
+export default function LoginComponent(props: LoginComponentProps) {
+  const { email, setEmail, password, setPassword } = props;
+
   return (
     <View style={loginStyle.container}>
       <Image
@@ -12,8 +21,19 @@ export default function LoginComponent() {
         source={require("../../../assets/logo.png")}
       />
       <View style={loginStyle.subContainer}>
-        <TextInput style={loginStyle.input} placeholder="Email" />
-        <TextInput style={loginStyle.input} placeholder="Password" />
+        <TextInput
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+          style={loginStyle.input}
+          placeholder="Email"
+        />
+        <TextInput
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          secureTextEntry={true}
+          style={loginStyle.input}
+          placeholder="Password"
+        />
         <TouchableOpacity
           style={loginStyle.button}
           onPress={() => console.log("giris yap")}
