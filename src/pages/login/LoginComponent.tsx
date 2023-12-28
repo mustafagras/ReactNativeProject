@@ -9,9 +9,11 @@ import { LoginComponentProps } from "../../types";
 import loginStyle from "../../UI/styles/loginStyle";
 import WhiteContainer from "../../components/whiteContainer";
 import { colors } from "../../UI/Color";
+import { navigationPage } from "../../constants/navigationConstant";
 
 export default function LoginComponent(props: LoginComponentProps) {
-  const { email, setEmail, password, setPassword } = props;
+  const { email, setEmail, password, setPassword, onNavigate } = props;
+  const { LOGIN, REGISTER, FORGOT_PASSWORD } = navigationPage;
 
   return (
     <WhiteContainer>
@@ -38,17 +40,17 @@ export default function LoginComponent(props: LoginComponentProps) {
         <SignInButton
           tx={"login"}
           color={colors.indianred}
-          onPress={() => console.log("Giris")}
+          onPress={() => onNavigate(LOGIN)}
         />
         <SignUpButton
           tx={"register"}
           color={colors.lightseagreen}
-          onPress={() => console.log("Kaydol")}
+          onPress={() => onNavigate(REGISTER)}
         />
         <ForgotPasswordButton
           tx={"forgotPassword"}
           color={colors.black}
-          onPress={() => console.log("Şifremi Unuttum")}
+          onPress={() => onNavigate(FORGOT_PASSWORD)}
         />
       </View>
     </WhiteContainer>

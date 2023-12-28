@@ -5,6 +5,7 @@ export interface LoginComponentProps {
   password: string;
   setEmail: (params: string) => void;
   setPassword: (params: string) => void;
+  onNavigate: (params: string) => void;
 }
 
 export interface CustomButtonProps {
