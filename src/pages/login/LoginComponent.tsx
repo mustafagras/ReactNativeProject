@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, TextInput, Image, TouchableOpacity } from "react-native";
+import { View, TextInput, Image, TouchableOpacity } from "react-native";
 import loginStyle from "../../UI/styles/loginStyle";
+import SignInText from "../../components/text";
 
 export default function LoginComponent() {
   return (
@@ -11,17 +12,13 @@ export default function LoginComponent() {
         source={require("../../../assets/logo.png")}
       />
       <View style={loginStyle.subContainer}>
-        <TextInput style={loginStyle.input} placeholder="Email">
-          Email
-        </TextInput>
-        <TextInput style={loginStyle.input} placeholder="Password">
-          Şifre
-        </TextInput>
+        <TextInput style={loginStyle.input} placeholder="Email" />
+        <TextInput style={loginStyle.input} placeholder="Password" />
         <TouchableOpacity
           style={loginStyle.button}
           onPress={() => console.log("giris yap")}
         >
-          <Text style={loginStyle.buttonText}>Giriş Yap</Text>
+          <SignInText tx={"login"} style={loginStyle.buttonText} />
         </TouchableOpacity>
       </View>
     </View>
