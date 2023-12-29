@@ -5,6 +5,10 @@ import WhiteContainer from "../../components/whiteContainer";
 import BoxContainer from "../../components/boxContainer";
 import LogoImage from "../../components/logoImage";
 import Input from "../../components/input";
+import CustomButton from "../../components/button";
+import { colors } from "../../UI/Color";
+import CustomCheckbox from "../../components/checkbox";
+import CustomText from "../../components/text";
 
 export default function RegisterComponent(props: RegisterComponentProps) {
   const {
@@ -56,6 +60,13 @@ export default function RegisterComponent(props: RegisterComponentProps) {
             setValue={setRePassword}
             placeHolder="auth:signUp:rePassword"
             secureTextEntry={true}
+          />
+          <CustomText tx="auth:signIn:policyInfo" />
+          <CustomCheckbox tx="auth:signUp:policy auth:signUp:and auth:signUp:terms auth:signUp:inspect" />
+          <CustomButton
+            tx={"auth:signUp:register"}
+            onPress={() => console.log()}
+            color={colors.red}
           />
         </BoxContainer>
       </ScrollView>
