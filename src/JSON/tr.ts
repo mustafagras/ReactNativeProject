@@ -51,6 +51,7 @@ const tr = [
       forgotPassword: {
         forgotPassword: "Şifremi Unuttum",
         title: "Şifremi Unuttum",
+        sendCode: "Doğrulama Kodu Gönder",
       },
     },
   },

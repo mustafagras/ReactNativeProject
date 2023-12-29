@@ -1,10 +1,31 @@
-import { View, Text } from "react-native";
 import React from "react";
+import { ForgotPasswordProps } from "../../types";
+import WhiteContainer from "../../components/whiteContainer";
+import LogoImage from "../../components/logoImage";
+import BoxContainer from "../../components/boxContainer";
+import Input from "../../components/input";
+import CustomButton from "../../components/button";
 
-export default function ForgotPaswordComponent() {
+export default function ForgotPaswordComponent({
+  email,
+  setEmail,
+}: ForgotPasswordProps) {
   return (
-    <View>
-      <Text>ForgotPaswordComponent</Text>
-    </View>
+    <WhiteContainer>
+      <LogoImage />
+      <BoxContainer>
+        <Input
+          value={email}
+          setValue={setEmail}
+          placeHolder="Email"
+          keyboardType="email-address"
+        />
+        <CustomButton
+          tx="auth:forgotPassword:forgotPassword"
+          color="red"
+          onPress={() => console.log("kod gönder")}
+        />
+      </BoxContainer>
+    </WhiteContainer>
   );
 }
