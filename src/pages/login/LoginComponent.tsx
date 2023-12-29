@@ -1,15 +1,12 @@
 import React from "react";
-import { View, TextInput, Image } from "react-native";
-import {
-  ForgotPasswordButton,
-  SignInButton,
-  SignUpButton,
-} from "../../components/button";
-import { LoginComponentProps } from "../../types";
-import loginStyle from "../../UI/styles/loginStyle";
-import WhiteContainer from "../../components/whiteContainer";
-import { colors } from "../../UI/Color";
 import { navigationPage } from "../../constants/navigationConstant";
+import { LoginComponentProps } from "../../types";
+import WhiteContainer from "../../components/whiteContainer";
+import LogoImage from "../../components/logoImage";
+import BoxContainer from "../../components/boxContainer";
+import Input from "../../components/input";
+import CustomButton from "../../components/button";
+import { colors } from "../../UI/Color";
 
 export default function LoginComponent(props: LoginComponentProps) {
   const { email, setEmail, password, setPassword, onNavigate } = props;
@@ -17,42 +14,37 @@ export default function LoginComponent(props: LoginComponentProps) {
 
   return (
     <WhiteContainer>
-      <Image
-        style={loginStyle.logo}
-        resizeMode="contain"
-        source={require("../../../assets/logo.png")}
-      />
-      <View style={loginStyle.subContainer}>
-        <TextInput
+      <LogoImage />
+      <BoxContainer>
+        <Input
           value={email}
-          onChangeText={(text) => setEmail(text)}
-          style={loginStyle.input}
-          placeholder="Email"
+          setValue={setEmail}
+          placeHolder="Email"
+          keyboardType="email-address"
         />
-        <TextInput
+        <Input
           value={password}
-          onChangeText={(text) => setPassword(text)}
-          keyboardType="default"
+          setValue={setPassword}
+          placeHolder="Password"
           secureTextEntry={true}
-          style={loginStyle.input}
-          placeholder="Password"
+          keyboardType="default"
         />
-        <SignInButton
-          tx={"login"}
+        <CustomButton
+          tx="auth:signIn:login"
           color={colors.indianred}
           onPress={() => onNavigate(LOGIN)}
         />
-        <SignUpButton
-          tx={"register"}
+        <CustomButton
+          tx="auth:signUp:register"
           color={colors.lightseagreen}
           onPress={() => onNavigate(REGISTER)}
         />
-        <ForgotPasswordButton
-          tx={"forgotPassword"}
+        <CustomButton
+          tx="auth:forgotPassword:forgotPassword"
           color={colors.black}
           onPress={() => onNavigate(FORGOT_PASSWORD)}
         />
-      </View>
+      </BoxContainer>
     </WhiteContainer>
   );
 }

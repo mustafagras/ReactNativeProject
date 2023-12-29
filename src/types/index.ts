@@ -1,5 +1,9 @@
 import { StyleProp, TextStyle } from "react-native";
 
+export type ChildrenProps = {
+  children: any;
+};
+
 export interface LoginComponentProps {
   email: string;
   password: string;
@@ -8,11 +12,10 @@ export interface LoginComponentProps {
   onNavigate: (params: string) => void;
 }
 
-export interface CustomButtonProps {
-  tx: string;
-  onPress: () => void;
-  color?: string;
-}
+export type ForgotPasswordProps = {
+  email: string;
+  setEmail: (params: string) => void;
+};
 
 export interface CustomTextProps {
   tx: string;
@@ -20,6 +23,16 @@ export interface CustomTextProps {
   style?: StyleProp<TextStyle>;
 }
 
-export type ChildrenProps = {
-  children: any;
-};
+export interface CustomButtonProps {
+  tx: string;
+  onPress: () => void;
+  color?: string;
+}
+
+export interface InputProps {
+  secureTextEntry?: boolean;
+  value: string;
+  setValue: (params: string) => void;
+  placeHolder: string;
+  keyboardType?: any;
+}
