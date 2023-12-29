@@ -12,11 +12,27 @@ export default function Input(props: InputProps) {
     secureTextEntry = false,
     keyboardType = "default",
   } = props;
+
+  const deepLookup = (obj, path) => {
+    const keys = path.split(":");
+    let result = obj;
+
+    for (const key of keys) {
+      result = result?.[key];
+      if (result === undefined) {
+        break;
+      }
+    }
+
+    return result;
+  };
+
+  const customPlaceHolder = deepLookup(tr[0], placeHolder) || placeHolder;
   return (
     <TextInput
       value={value}
       onChangeText={(text) => setValue(text)}
-      placeholder={placeHolder}
+      placeholder={customPlaceHolder}
       secureTextEntry={secureTextEntry}
       keyboardType={keyboardType}
       style={styles.input}

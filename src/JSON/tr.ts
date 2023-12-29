@@ -2,14 +2,14 @@ const tr = [
   {
     auth: {
       signIn: {
+        title: "Kullanıcı Girişi",
         email: "E-posta",
         password: "Şifre",
         login: "Giriş Yap",
         register: "Üyelik Oluştur",
-        title: "Kullanıcı Girişi",
+        forgotButton: "Şifremi Unuttum",
         language: "Dil",
         forgot: "Şifreni mi unuttun?",
-        forgotButton: "Şifremi Unuttum",
         successRecorded: "Giriş Yapıldı",
         policyInfo: "K.V.K.K kapsamında kişisel bilgileriniz saklanmaktadır.",
         policy: "Gizlilik Politikası",
@@ -18,6 +18,7 @@ const tr = [
         inspect: " inceleyin.",
       },
       signUp: {
+        title: "Yeni Üyelik",
         fullName: "Ad Soyad",
         phoneNumber: "Telefon Numarası",
         email: "E-posta",
@@ -25,7 +26,6 @@ const tr = [
         rePassword: "Şifre Tekrar",
         login: "Giriş Yap",
         register: "Üyelik Oluştur",
-        title: "Yeni Üyelik",
         language: "Dil",
         allReady: "Zaten bir hesabın var mı?",
         allReadyButton: "Giriş Yap",
@@ -49,8 +49,8 @@ const tr = [
         checkPassword: "Şifre Doğrulama",
       },
       forgotPassword: {
-        forgotPassword: "Şifremi Unuttum",
         title: "Şifremi Unuttum",
+        email: "E-posta",
         sendCode: "Doğrulama Kodu Gönder",
       },
     },

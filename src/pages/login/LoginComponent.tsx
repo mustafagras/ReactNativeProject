@@ -19,13 +19,13 @@ export default function LoginComponent(props: LoginComponentProps) {
         <Input
           value={email}
           setValue={setEmail}
-          placeHolder="Email"
+          placeHolder="auth:signIn:email"
           keyboardType="email-address"
         />
         <Input
           value={password}
           setValue={setPassword}
-          placeHolder="Password"
+          placeHolder="auth:signIn:password"
           secureTextEntry={true}
           keyboardType="default"
         />
@@ -35,12 +35,12 @@ export default function LoginComponent(props: LoginComponentProps) {
           onPress={() => onNavigate(LOGIN)}
         />
         <CustomButton
-          tx="auth:signUp:register"
+          tx="auth:signIn:register"
           color={colors.lightseagreen}
           onPress={() => onNavigate(REGISTER)}
         />
         <CustomButton
-          tx="auth:forgotPassword:forgotPassword"
+          tx="auth:signIn:forgotButton"
           color={colors.black}
           onPress={() => onNavigate(FORGOT_PASSWORD)}
         />

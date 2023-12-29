@@ -17,7 +17,7 @@ export default function ForgotPaswordComponent({
         <Input
           value={email}
           setValue={setEmail}
-          placeHolder="Email"
+          placeHolder="auth:forgotPassword:email"
           keyboardType="email-address"
         />
         <CustomButton
