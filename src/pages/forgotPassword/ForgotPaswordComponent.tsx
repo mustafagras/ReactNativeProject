@@ -21,7 +21,7 @@ export default function ForgotPaswordComponent({
           keyboardType="email-address"
         />
         <CustomButton
-          tx="auth:forgotPassword:forgotPassword"
+          tx="auth:forgotPassword:sendCode"
           color="red"
           onPress={() => console.log("kod gönder")}
         />
