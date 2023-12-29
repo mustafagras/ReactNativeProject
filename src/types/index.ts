@@ -12,7 +12,24 @@ export interface LoginComponentProps {
   onNavigate: (params: string) => void;
 }
 
-export type ForgotPasswordProps = {
+export interface RegisterComponentProps {
+  fullName: string;
+  setFullName: (params: string) => void;
+  email: string;
+  setEmail: (params: string) => void;
+  phone?: number;
+  setPhone: (params: number) => void;
+  password: string;
+  setPassword: (params: string) => void;
+  rePassword: string;
+  setRePassword: (params: string) => void;
+  isVisible: boolean;
+  setIsVisible: (params: boolean) => void;
+  isChecked: boolean;
+  setIsChecked: (params: boolean) => void;
+}
+
+export type ForgotPasswordComponentProps = {
   email: string;
   setEmail: (params: string) => void;
 };
@@ -31,8 +48,8 @@ export interface CustomButtonProps {
 
 export interface InputProps {
   secureTextEntry?: boolean;
-  value: string;
-  setValue: (params: string) => void;
+  value?: string | number;
+  setValue: (params?: string | number) => void;
   placeHolder: string;
   keyboardType?: any;
 }

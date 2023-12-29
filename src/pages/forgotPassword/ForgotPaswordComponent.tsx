@@ -1,5 +1,5 @@
 import React from "react";
-import { ForgotPasswordProps } from "../../types";
+import { ForgotPasswordComponentProps } from "../../types";
 import WhiteContainer from "../../components/whiteContainer";
 import LogoImage from "../../components/logoImage";
 import BoxContainer from "../../components/boxContainer";
@@ -9,7 +9,7 @@ import CustomButton from "../../components/button";
 export default function ForgotPaswordComponent({
   email,
   setEmail,
-}: ForgotPasswordProps) {
+}: ForgotPasswordComponentProps) {
   return (
     <WhiteContainer>
       <LogoImage />
