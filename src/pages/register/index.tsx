@@ -11,6 +11,11 @@ export default function RegisterContainer() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
+  const onModal = () => {
+    setIsChecked(true);
+    setIsVisible(false);
+  };
+
   return (
     <RegisterComponent
       fullName={fullName}
@@ -26,7 +31,7 @@ export default function RegisterContainer() {
       isVisible={isVisible}
       setIsVisible={setIsVisible}
       isChecked={isChecked}
-      setIsChecked={setIsChecked}
+      onModal={onModal}
     />
   );
 }

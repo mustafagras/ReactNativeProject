@@ -26,7 +26,7 @@ export interface RegisterComponentProps {
   isVisible: boolean;
   setIsVisible: (params: boolean) => void;
   isChecked: boolean;
-  setIsChecked: (params: boolean) => void;
+  onModal: () => void;
 }
 
 export type ForgotPasswordComponentProps = {
@@ -44,6 +44,11 @@ export interface CustomButtonProps {
   tx: string;
   onPress: () => void;
   color?: string;
+}
+
+export interface CustomCheckBoxProps {
+  tx: string;
+  checked: boolean;
 }
 
 export interface InputProps {

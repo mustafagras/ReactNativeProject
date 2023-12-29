@@ -25,7 +25,7 @@ export default function RegisterComponent(props: RegisterComponentProps) {
     isVisible,
     setIsVisible,
     isChecked,
-    setIsChecked,
+    onModal,
   } = props;
   return (
     <WhiteContainer>
@@ -62,7 +62,10 @@ export default function RegisterComponent(props: RegisterComponentProps) {
             secureTextEntry={true}
           />
           <CustomText tx="auth:signIn:policyInfo" />
-          <CustomCheckbox tx="auth:signUp:policy auth:signUp:and auth:signUp:terms auth:signUp:inspect" />
+          <CustomCheckbox
+            tx="auth:signUp:policy auth:signUp:and auth:signUp:terms auth:signUp:inspect"
+            checked={isChecked}
+          />
           <CustomButton
             tx={"auth:signUp:register"}
             onPress={() => console.log()}

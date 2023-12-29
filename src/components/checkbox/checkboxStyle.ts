@@ -18,10 +18,13 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     borderWidth: 1,
     borderColor: colors.indianred,
+    alignItems: "center",
+    justifyContent: "center",
   },
   checkboxInfo: {
     marginLeft: 10,
   },
+  checkboxIcon: { width: 15, height: 20 },
 });
 
 export default styles;
