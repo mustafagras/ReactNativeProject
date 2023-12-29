@@ -35,6 +35,7 @@ const tr = [
         and: " ve ",
         terms: "Kullanım Koşullarını",
         inspect: " inceleyin.",
+        policyOkey: "Kabul ediyorum",
         mailStatus: false,
         confirmationCode: "Doğrulama Kodu",
         confirmationCodeInfo:

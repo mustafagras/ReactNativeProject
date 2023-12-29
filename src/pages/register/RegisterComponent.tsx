@@ -9,6 +9,8 @@ import CustomButton from "../../components/button";
 import { colors } from "../../UI/Color";
 import CustomCheckbox from "../../components/checkbox";
 import CustomText from "../../components/text";
+import { Modal, View } from "react-native";
+import registerStyle from "../../UI/styles/registerStyle";
 
 export default function RegisterComponent(props: RegisterComponentProps) {
   const {
@@ -72,6 +74,17 @@ export default function RegisterComponent(props: RegisterComponentProps) {
             color={colors.red}
           />
         </BoxContainer>
+        <Modal visible={isVisible} transparent={true}>
+          <View style={registerStyle.modalContainer}>
+            <View style={registerStyle.modalWhiteContainer}>
+              <CustomButton
+                tx="auth:signUp:policyOkey"
+                color={colors.lightseagreen}
+                onPress={onModal}
+              />
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
     </WhiteContainer>
   );

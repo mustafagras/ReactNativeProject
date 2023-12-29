@@ -9,4 +9,5 @@ export const colors = {
   lightskyblue: "#87cefa",
   red: "#ff0000",
   white: "#ffffff",
+  opacityBlack: "rgba(0,0,0,0.5)",
 };
