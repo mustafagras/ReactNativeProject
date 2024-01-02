@@ -49,6 +49,7 @@ export interface CustomButtonProps {
 export interface CustomCheckBoxProps {
   tx: string;
   checked: boolean;
+  onPress: () => void;
 }
 
 export interface InputProps {

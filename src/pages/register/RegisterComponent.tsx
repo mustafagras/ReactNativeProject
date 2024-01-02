@@ -67,6 +67,7 @@ export default function RegisterComponent(props: RegisterComponentProps) {
           <CustomCheckbox
             tx="auth:signUp:policy auth:signUp:and auth:signUp:terms auth:signUp:inspect"
             checked={isChecked}
+            onPress={() => setIsVisible(!isVisible)}
           />
           <CustomButton
             tx={"auth:signUp:register"}

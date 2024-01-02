@@ -7,13 +7,14 @@ import styles from "./checkboxStyle";
 export default function CustomCheckbox({
   tx,
   checked = false,
+  onPress,
 }: CustomCheckBoxProps) {
   const keys = tx.split(" ");
   const customText = keys.map((tx, index) => (
     <CustomText tx={tx} key={index} />
   ));
   return (
-    <TouchableOpacity style={styles.checkboxContainer}>
+    <TouchableOpacity style={styles.checkboxContainer} onPress={onPress}>
       <View style={styles.checkboxSubContainer}>
         <View style={styles.checkboxBorder}>
           {checked && (
