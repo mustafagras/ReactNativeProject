@@ -1,10 +1,12 @@
 import React from "react";
 import { View, Text } from "react-native";
+import WhiteContainer from "../../components/whiteContainer";
+import CustomText from "../../components/text";
 
 export default function DashboardComponent() {
   return (
-    <View>
-      <Text>DashboardComponent</Text>
-    </View>
+    <WhiteContainer>
+      <CustomText tx={"app:home:title"} />
+    </WhiteContainer>
   );
 }

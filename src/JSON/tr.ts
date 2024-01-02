@@ -61,6 +61,20 @@ const tr = [
         logout: "Çıkış Yap",
       },
     },
+    app: {
+      home: {
+        title: "Anasayfa",
+      },
+      educationList: {
+        title: "Eğitim Listesi",
+      },
+      eventList: {
+        title: "Etkinlik Listesi",
+      },
+      profile: {
+        title: "Profil",
+      },
+    },
   },
 ];
 export default tr;

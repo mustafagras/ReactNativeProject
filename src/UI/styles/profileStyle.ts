@@ -7,7 +7,7 @@ const profileStyle = StyleSheet.create({
   redContainer: {
     width: width,
     height: 200,
-    backgroundColor: colors.indianred,
+    backgroundColor: colors.lightRed,
     borderBottomLeftRadius: 200,
     borderBottomRightRadius: 200,
     alignItems: "center",
@@ -59,7 +59,7 @@ const profileStyle = StyleSheet.create({
     marginHorizontal: "5%",
     width: "90%",
     padding: "5%",
-    borderColor: colors.indianred,
+    borderColor: colors.indianRed,
     borderWidth: 1,
     borderRadius: 5,
     backgroundColor: colors.white,

@@ -6,6 +6,7 @@ import DashboardContainer from "../pages/dashboard";
 import EducationListContainer from "../pages/education_list";
 import EventListContainer from "../pages/event_list";
 import ProfileContainer from "../pages/profile";
+import tr from "../JSON/tr";
 
 const Tabs = createBottomTabNavigator();
 
@@ -68,10 +69,26 @@ export default function AppNavigation() {
         },
       })}
     >
-      <Tabs.Screen name={HOME} component={DashboardContainer} />
-      <Tabs.Screen name={EDUCATION_LIST} component={EducationListContainer} />
-      <Tabs.Screen name={EVENT_LIST} component={EventListContainer} />
-      <Tabs.Screen name={PROFILE} component={ProfileContainer} />
+      <Tabs.Screen
+        name={HOME}
+        component={DashboardContainer}
+        options={{ title: `${tr[0].app.home["title"]}` }}
+      />
+      <Tabs.Screen
+        name={EDUCATION_LIST}
+        component={EducationListContainer}
+        options={{ title: `${tr[0].app.educationList["title"]}` }}
+      />
+      <Tabs.Screen
+        name={EVENT_LIST}
+        component={EventListContainer}
+        options={{ title: `${tr[0].app.eventList["title"]}` }}
+      />
+      <Tabs.Screen
+        name={PROFILE}
+        component={ProfileContainer}
+        options={{ title: `${tr[0].app.profile["title"]}` }}
+      />
     </Tabs.Navigator>
   );
 }

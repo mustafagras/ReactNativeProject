@@ -96,7 +96,7 @@ export default function RegisterComponent(props: RegisterComponentProps) {
               />
               <CustomButton
                 tx="auth:signUp:policyOkey"
-                color={colors.lightseagreen}
+                color={colors.lightSeaGreen}
                 onPress={onModal}
               />
             </View>

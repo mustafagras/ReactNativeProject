@@ -31,12 +31,12 @@ export default function LoginComponent(props: LoginComponentProps) {
         />
         <CustomButton
           tx="auth:signIn:login"
-          color={colors.indianred}
+          color={colors.indianRed}
           onPress={onLogin}
         />
         <CustomButton
           tx="auth:signIn:register"
-          color={colors.lightseagreen}
+          color={colors.lightSeaGreen}
           onPress={() => onNavigate(REGISTER)}
         />
         <CustomButton
