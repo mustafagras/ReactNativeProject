@@ -1,9 +1,9 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { navigationPage } from "../constants/navigationConstant";
 import LoginContainer from "../pages/login";
 import RegisterContainer from "../pages/register";
 import ForgotPasswordContainer from "../pages/forgotPassword";
-import { navigationPage } from "../constants/navigationConstant";
 import tr from "../JSON/tr";
 
 const Stack = createStackNavigator();
