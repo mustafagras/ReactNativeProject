@@ -4,6 +4,11 @@ export type ChildrenProps = {
   children: any;
 };
 
+export interface StoreType {
+  isLogin: boolean;
+  setIsLogin: (params: boolean) => void;
+}
+
 export interface LoginComponentProps {
   email: string;
   password: string;
@@ -35,10 +40,15 @@ export type ForgotPasswordComponentProps = {
   setEmail: (params: string) => void;
 };
 
+export interface ProfileProps {
+  onLogOut: () => void;
+}
+
 export interface CustomTextProps {
   tx: string;
   //   style: StyleProp<TextStyle> | undefined;
   style?: StyleProp<TextStyle>;
+  children?: JSX.Element;
 }
 
 export interface CustomButtonProps {
@@ -59,9 +69,4 @@ export interface InputProps {
   setValue: (params?: string | number) => void;
   placeHolder: string;
   keyboardType?: any;
-}
-
-export interface StoreType {
-  isLogin: boolean;
-  setIsLogin: (params: boolean) => void;
 }

@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import { CustomTextProps } from "../../types";
 import tr from "../../JSON/tr";
 
-export default function CustomText({ tx, style }: CustomTextProps) {
+export default function CustomText({ tx, style, children }: CustomTextProps) {
   const deepLookup = (obj, path) => {
     const keys = path.split(":");
     let result = obj;
@@ -19,5 +19,10 @@ export default function CustomText({ tx, style }: CustomTextProps) {
   };
 
   const customText = deepLookup(tr[0], tx) || tx;
-  return <Text style={style}>{customText}</Text>;
+  return (
+    <Text style={style}>
+      {customText}
+      {children}
+    </Text>
+  );
 }

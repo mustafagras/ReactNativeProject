@@ -54,6 +54,12 @@ const tr = [
         email: "E-posta",
         sendCode: "Doğrulama Kodu Gönder",
       },
+      signOut: {
+        email: "E-posta: ",
+        phone: "Telefon: ",
+        address: "Adres: ",
+        logout: "Çıkış Yap",
+      },
     },
   },
 ];
