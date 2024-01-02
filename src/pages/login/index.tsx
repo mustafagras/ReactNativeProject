@@ -1,14 +1,20 @@
 import React, { useState } from "react";
-import LoginComponent from "./LoginComponent";
 import { useNavigation } from "@react-navigation/native";
+import { useAppStore } from "../../store/app";
+import LoginComponent from "./LoginComponent";
 
 export default function LoginContainer() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigation = useNavigation();
+  const setIsLogin = useAppStore().setIsLogin;
 
-  const onNavigate = (params: string) => {
+  const onNavigate = (params: never) => {
     navigation.navigate(params);
+  };
+
+  const onLogin = () => {
+    setIsLogin(true);
   };
 
   return (
@@ -18,6 +24,7 @@ export default function LoginContainer() {
       password={password}
       setPassword={setPassword}
       onNavigate={onNavigate}
+      onLogin={onLogin}
     />
   );
 }

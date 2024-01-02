@@ -10,6 +10,7 @@ export interface LoginComponentProps {
   setEmail: (params: string) => void;
   setPassword: (params: string) => void;
   onNavigate: (params: string) => void;
+  onLogin: () => void;
 }
 
 export interface RegisterComponentProps {
@@ -58,4 +59,9 @@ export interface InputProps {
   setValue: (params?: string | number) => void;
   placeHolder: string;
   keyboardType?: any;
+}
+
+export interface StoreType {
+  isLogin: boolean;
+  setIsLogin: (params: boolean) => void;
 }

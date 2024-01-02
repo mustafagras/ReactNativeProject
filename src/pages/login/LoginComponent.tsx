@@ -9,7 +9,7 @@ import CustomButton from "../../components/button";
 import { colors } from "../../UI/Color";
 
 export default function LoginComponent(props: LoginComponentProps) {
-  const { email, setEmail, password, setPassword, onNavigate } = props;
+  const { email, setEmail, password, setPassword, onNavigate, onLogin } = props;
   const { LOGIN, REGISTER, FORGOT_PASSWORD } = navigationPage;
 
   return (
@@ -32,7 +32,7 @@ export default function LoginComponent(props: LoginComponentProps) {
         <CustomButton
           tx="auth:signIn:login"
           color={colors.indianred}
-          onPress={() => onNavigate(LOGIN)}
+          onPress={onLogin}
         />
         <CustomButton
           tx="auth:signIn:register"

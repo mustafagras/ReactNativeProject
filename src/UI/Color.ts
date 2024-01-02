@@ -7,6 +7,8 @@ export const colors = {
   indianred: "#cd5c5c",
   lightseagreen: "#20b2aa",
   lightskyblue: "#87cefa",
+  grey: "#7D7D7D",
+  lightGrey: "#DEDEDE",
   red: "#ff0000",
   white: "#ffffff",
   opacityBlack: "rgba(0,0,0,0.5)",
