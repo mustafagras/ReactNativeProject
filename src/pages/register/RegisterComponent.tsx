@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Modal, View, ScrollView, TouchableOpacity } from "react-native";
+import WebView from "react-native-webview";
 import { RegisterComponentProps } from "../../types";
 import WhiteContainer from "../../components/whiteContainer";
 import BoxContainer from "../../components/boxContainer";
@@ -9,6 +10,7 @@ import CustomButton from "../../components/button";
 import CustomCheckbox from "../../components/checkbox";
 import CustomText from "../../components/text";
 import { colors } from "../../UI/Color";
+import { width } from "../../UI/Size";
 import registerStyle from "../../UI/styles/registerStyle";
 
 export default function RegisterComponent(props: RegisterComponentProps) {
@@ -86,6 +88,12 @@ export default function RegisterComponent(props: RegisterComponentProps) {
                   source={require("../../../assets/close.png")}
                 />
               </TouchableOpacity>
+              <WebView
+                style={{ width: width * 0.7, zIndex: -1 }}
+                source={{
+                  uri: "https://www.africau.edu/images/default/sample.pdf",
+                }}
+              />
               <CustomButton
                 tx="auth:signUp:policyOkey"
                 color={colors.lightseagreen}
