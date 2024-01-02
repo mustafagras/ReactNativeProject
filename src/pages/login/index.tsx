@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { useAppStore } from "../../store/app";
+import { useAppSettings, useAppStore } from "../../store/app";
 import LoginComponent from "./LoginComponent";
 
 export default function LoginContainer() {
@@ -9,12 +9,23 @@ export default function LoginContainer() {
   const navigation = useNavigation();
   const setIsLogin = useAppStore().setIsLogin;
 
+  const toggleLoader = useAppSettings().toggleLoader;
+  const hideLoader = useAppSettings().hideLoader;
+
   const onNavigate = (params: never) => {
-    navigation.navigate(params);
+    toggleLoader();
+    setTimeout(() => {
+      hideLoader();
+      navigation.navigate(params);
+    }, 1000);
   };
 
   const onLogin = () => {
-    setIsLogin(true);
+    toggleLoader();
+    setTimeout(() => {
+      hideLoader();
+      setIsLogin(true);
+    }, 1000);
   };
 
   return (

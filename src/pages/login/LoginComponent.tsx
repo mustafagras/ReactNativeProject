@@ -10,7 +10,7 @@ import { colors } from "../../UI/Color";
 
 export default function LoginComponent(props: LoginComponentProps) {
   const { email, setEmail, password, setPassword, onNavigate, onLogin } = props;
-  const { LOGIN, REGISTER, FORGOT_PASSWORD } = navigationPage;
+  const { REGISTER, FORGOT_PASSWORD } = navigationPage;
 
   return (
     <WhiteContainer>
