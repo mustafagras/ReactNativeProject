@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   checkboxInfo: {
-    marginLeft: 10,
+    marginLeft: 5,
   },
-  checkboxIcon: { width: 15, height: 20 },
+  checkboxIcon: { width: 15, height: 15 },
 });
 
 export default styles;

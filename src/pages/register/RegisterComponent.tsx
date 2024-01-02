@@ -77,7 +77,10 @@ export default function RegisterComponent(props: RegisterComponentProps) {
         <Modal visible={isVisible} transparent={true}>
           <View style={registerStyle.modalContainer}>
             <View style={registerStyle.modalWhiteContainer}>
-              <TouchableOpacity onPress={() => setIsVisible(false)}>
+              <TouchableOpacity
+                style={registerStyle.closeButton}
+                onPress={() => setIsVisible(false)}
+              >
                 <Image
                   style={registerStyle.closeIcon}
                   source={require("../../../assets/close.png")}

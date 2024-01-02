@@ -14,6 +14,12 @@ const registerStyle = StyleSheet.create({
     height: "80%",
     backgroundColor: colors.white,
     borderRadius: 20,
+    padding: "2.5%",
+    alignItems: "center",
+  },
+  closeButton: {
+    width: "100%",
+    alignItems: "flex-end",
   },
   closeIcon: {
     width: 20,
