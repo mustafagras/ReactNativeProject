@@ -15,6 +15,10 @@ const registerStyle = StyleSheet.create({
     backgroundColor: colors.white,
     borderRadius: 20,
   },
+  closeIcon: {
+    width: 20,
+    height: 20,
+  },
 });
 
 export default registerStyle;

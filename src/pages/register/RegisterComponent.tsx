@@ -1,15 +1,14 @@
 import React from "react";
-import { ScrollView } from "react-native-gesture-handler";
+import { Image, Modal, View, ScrollView, TouchableOpacity } from "react-native";
 import { RegisterComponentProps } from "../../types";
 import WhiteContainer from "../../components/whiteContainer";
 import BoxContainer from "../../components/boxContainer";
 import LogoImage from "../../components/logoImage";
 import Input from "../../components/input";
 import CustomButton from "../../components/button";
-import { colors } from "../../UI/Color";
 import CustomCheckbox from "../../components/checkbox";
 import CustomText from "../../components/text";
-import { Modal, View } from "react-native";
+import { colors } from "../../UI/Color";
 import registerStyle from "../../UI/styles/registerStyle";
 
 export default function RegisterComponent(props: RegisterComponentProps) {
@@ -78,6 +77,12 @@ export default function RegisterComponent(props: RegisterComponentProps) {
         <Modal visible={isVisible} transparent={true}>
           <View style={registerStyle.modalContainer}>
             <View style={registerStyle.modalWhiteContainer}>
+              <TouchableOpacity onPress={() => setIsVisible(false)}>
+                <Image
+                  style={registerStyle.closeIcon}
+                  source={require("../../../assets/close.png")}
+                />
+              </TouchableOpacity>
               <CustomButton
                 tx="auth:signUp:policyOkey"
                 color={colors.lightseagreen}
