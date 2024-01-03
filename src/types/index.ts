@@ -1,4 +1,10 @@
-import { StyleProp, TextStyle } from "react-native";
+import {
+  ImageStyle,
+  ListRenderItem,
+  StyleProp,
+  TextStyle,
+  ViewStyle,
+} from "react-native";
 
 export type ChildrenProps = {
   children: any;
@@ -69,4 +75,10 @@ export interface InputProps {
   setValue: (params?: string | number) => void;
   placeHolder: string;
   keyboardType?: any;
+}
+
+export interface CustomCardProps {
+  item: any;
+  containerStyle?: StyleProp<ViewStyle>;
+  imageStyle?: StyleProp<ImageStyle>;
 }
