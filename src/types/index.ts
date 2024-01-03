@@ -48,7 +48,7 @@ export interface CustomTextProps {
   tx: string;
   //   style: StyleProp<TextStyle> | undefined;
   style?: StyleProp<TextStyle>;
-  children?: JSX.Element;
+  children?: string;
 }
 
 export interface CustomButtonProps {

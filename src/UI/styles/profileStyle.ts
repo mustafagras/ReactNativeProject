@@ -74,9 +74,14 @@ const profileStyle = StyleSheet.create({
     gap: 10,
   },
   buttonContainer: {
-    marginTop: 20,
     marginHorizontal: "5%",
-    width: "100%",
+    marginTop: -5,
+    width: width,
+  },
+  mapViewStyle: {
+    width: width * 0.9,
+    margin: "5%",
+    height: 150,
   },
 });
 
