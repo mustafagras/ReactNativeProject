@@ -3,10 +3,12 @@ import { View, FlatList, TouchableOpacity, Image, Text } from "react-native";
 import { HomeProps } from "../../types";
 import WhiteContainer from "../../components/whiteContainer";
 import CustomCard from "../../components/card";
-import { data, partners, successStories } from "../../JSON/API/home";
 import homeStyle from "../../UI/styles/homeStyle";
 
 export default function HomeComponent({
+  sliderData,
+  partners,
+  stories,
   storiesRef,
   onLeft,
   onRight,
@@ -24,7 +26,7 @@ export default function HomeComponent({
     <WhiteContainer>
       <View style={homeStyle.cardFlatlistStyle}>
         <FlatList
-          data={data}
+          data={sliderData}
           horizontal={true}
           renderItem={({ item }) => <CustomCard item={item} />}
           showsHorizontalScrollIndicator={false}
@@ -55,7 +57,7 @@ export default function HomeComponent({
         />
         <FlatList
           ref={storiesRef}
-          data={successStories}
+          data={stories}
           renderItem={({ item }) => (
             <View style={homeStyle.userContainer}>
               <CustomCard

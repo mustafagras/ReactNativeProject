@@ -1,6 +1,6 @@
 const baseURL = "https://wissenreactnative-default-rtdb.firebaseio.com/";
 
-const apiConfig = {
+export const apiConfig = {
   educationListGet: `${baseURL}education.json`,
   eventListGet: `${baseURL}event.json`,
   sliderDataGet: `${baseURL}sliderData.json`,

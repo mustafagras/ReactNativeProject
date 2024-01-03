@@ -1,8 +1,9 @@
 import axios from "axios";
 import { Alert } from "react-native";
+import { apiConfig } from "../apiConfig";
 
 export const getEventList = () => {
-  axios
+  return axios
     .get(apiConfig.eventListGet)
     .then((res) => {
       console.log("res", res.data);

@@ -48,6 +48,9 @@ export type ForgotPasswordComponentProps = {
 };
 
 export interface HomeProps {
+  sliderData: any | boolean;
+  partners: any | boolean;
+  stories: any | boolean;
   storiesRef: LegacyRef<FlatList>;
   onRight: () => void;
   onLeft: () => void;

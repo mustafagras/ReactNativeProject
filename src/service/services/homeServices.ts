@@ -1,8 +1,9 @@
 import axios from "axios";
 import { Alert } from "react-native";
+import { apiConfig } from "../apiConfig";
 
 export const getSliderData = () => {
-  axios
+  return axios
     .get(apiConfig.sliderDataGet)
     .then((res) => {
       console.log("res", res.data);
@@ -15,7 +16,7 @@ export const getSliderData = () => {
 };
 
 export const getPartnersData = () => {
-  axios
+  return axios
     .get(apiConfig.partnersDataGet)
     .then((res) => {
       console.log("res", res.data);
@@ -28,7 +29,7 @@ export const getPartnersData = () => {
 };
 
 export const getSuccessStoriesData = () => {
-  axios
+  return axios
     .get(apiConfig.successStoriesDataGet)
     .then((res) => {
       console.log("res", res.data);
