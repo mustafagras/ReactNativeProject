@@ -2,7 +2,7 @@ import React from "react";
 import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { navigationPage } from "../constants/navigationConstant";
-import DashboardContainer from "../pages/dashboard";
+import HomeContainer from "../pages/home";
 import EducationListContainer from "../pages/education_list";
 import EventListContainer from "../pages/event_list";
 import ProfileContainer from "../pages/profile";
@@ -71,7 +71,7 @@ export default function AppNavigation() {
     >
       <Tabs.Screen
         name={HOME}
-        component={DashboardContainer}
+        component={HomeContainer}
         options={{ title: `${tr[0].app.home["title"]}` }}
       />
       <Tabs.Screen
