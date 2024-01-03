@@ -1,3 +1,5 @@
+import { threeDot } from "../constants/formatString";
+
 const tr = [
   {
     auth: {
@@ -67,6 +69,10 @@ const tr = [
       },
       educationList: {
         title: "Eğitim Listesi",
+        detailSee: "Detay Gör",
+        moreSee: "Devamını Gör",
+        notMore: "Daha Az Gör",
+        findButton: `Eğitim Ara${threeDot}`,
       },
       eventList: {
         title: "Etkinlik Listesi",
