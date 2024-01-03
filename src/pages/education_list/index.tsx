@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import { data } from "../../JSON/API/education";
 import EducationListComponent from "./EducationListComponent";
+import { navigationPage } from "../../constants/navigationConstant";
 
 export default function EducationListContainer() {
   const [lastData, setLastData] = useState<any>(data);
   const [searchText, setSearchText] = useState<string>("");
+  const { navigate } = useNavigation();
+  const { EDUCATION_DETAIL } = navigationPage;
 
   const onSearch = (text: string) => {
     setSearchText(text);
@@ -15,7 +19,7 @@ export default function EducationListContainer() {
   };
 
   const onDetail = () => {
-    console.log("Detay Gör");
+    navigate(EDUCATION_DETAIL);
   };
 
   return (

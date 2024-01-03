@@ -7,6 +7,7 @@ import EducationListContainer from "../pages/education_list";
 import EventListContainer from "../pages/event_list";
 import ProfileContainer from "../pages/profile";
 import tr from "../JSON/tr";
+import EducationNavigation from "./educationNavigation";
 
 const Tabs = createBottomTabNavigator();
 
@@ -72,22 +73,34 @@ export default function AppNavigation() {
       <Tabs.Screen
         name={HOME}
         component={HomeContainer}
-        options={{ title: `${tr[0].app.home["title"]}` }}
+        options={{
+          headerTitle: `${tr[0].app.home["title"]}`,
+          headerTitleAlign: "center",
+        }}
       />
       <Tabs.Screen
         name={EDUCATION_LIST}
-        component={EducationListContainer}
-        options={{ title: `${tr[0].app.educationList["title"]}` }}
+        component={EducationNavigation}
+        options={{
+          headerTitle: `${tr[0].app.educationList["title"]}`,
+          headerShown: false,
+        }}
       />
       <Tabs.Screen
         name={EVENT_LIST}
         component={EventListContainer}
-        options={{ title: `${tr[0].app.eventList["title"]}` }}
+        options={{
+          headerTitle: `${tr[0].app.eventList["title"]}`,
+          headerTitleAlign: "center",
+        }}
       />
       <Tabs.Screen
         name={PROFILE}
         component={ProfileContainer}
-        options={{ title: `${tr[0].app.profile["title"]}` }}
+        options={{
+          headerTitle: `${tr[0].app.profile["title"]}`,
+          headerTitleAlign: "center",
+        }}
       />
     </Tabs.Navigator>
   );

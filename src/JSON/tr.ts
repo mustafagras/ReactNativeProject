@@ -69,6 +69,7 @@ const tr = [
       },
       educationList: {
         title: "Eğitim Listesi",
+        title2: "Eğitim Detay Listesi",
         detailSee: "Detay Gör",
         moreSee: "Devamını Gör",
         notMore: "Daha Az Gör",
