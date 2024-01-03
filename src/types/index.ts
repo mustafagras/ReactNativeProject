@@ -1,6 +1,7 @@
+import { LegacyRef } from "react";
 import {
+  FlatList,
   ImageStyle,
-  ListRenderItem,
   StyleProp,
   TextStyle,
   ViewStyle,
@@ -46,6 +47,12 @@ export type ForgotPasswordComponentProps = {
   setEmail: (params: string) => void;
 };
 
+export interface HomeProps {
+  storiesRef: LegacyRef<FlatList>;
+  onRight: () => void;
+  onLeft: () => void;
+}
+
 export interface ProfileProps {
   onLogOut: () => void;
 }
@@ -81,4 +88,5 @@ export interface CustomCardProps {
   item: any;
   containerStyle?: StyleProp<ViewStyle>;
   imageStyle?: StyleProp<ImageStyle>;
+  children?: JSX.Element;
 }
