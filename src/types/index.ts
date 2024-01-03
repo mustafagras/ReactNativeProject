@@ -53,9 +53,26 @@ export interface HomeProps {
   onLeft: () => void;
 }
 
+export interface EducationListProps {
+  onSearch: (params: string) => void;
+  searchText: string;
+  data: any;
+  onDetail: () => void;
+}
+
 export interface ProfileProps {
   onLogOut: () => void;
 }
+
+export type SearchProps = {
+  placeHolder: string;
+  value: string;
+  onChangeText: (params: string) => void;
+};
+
+export type EmptyProps = {
+  text: string;
+};
 
 export interface CustomTextProps {
   tx: string;
@@ -90,3 +107,17 @@ export interface CustomCardProps {
   imageStyle?: StyleProp<ImageStyle>;
   children?: JSX.Element;
 }
+
+export interface CustomListCardProps {
+  containerStyle?: StyleProp<ViewStyle>;
+  titleTextStyle?: StyleProp<TextStyle>;
+  timerTextStyle?: StyleProp<TextStyle>;
+  descTextStyle?: StyleProp<TextStyle>;
+  item: any;
+  onPress: () => void;
+}
+
+export type CustomTextButtonProps = {
+  label: string;
+  onPress: () => void;
+};
