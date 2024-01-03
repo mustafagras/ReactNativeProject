@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
   cardImage: {
     width: "90%",
     height: "100%",
+    borderRadius: 10,
   },
 });
 
