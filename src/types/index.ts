@@ -65,6 +65,15 @@ export interface EducationDetailProps {
   setIsVisibleDesc: (params: boolean) => void;
 }
 
+export type EventListProps = {
+  searchText: string;
+  onSearch: (params: string) => void;
+  data: any;
+  onDetail: () => void;
+};
+
+export type EventDetailsProps = {};
+
 export interface ProfileProps {
   onLogOut: () => void;
 }
