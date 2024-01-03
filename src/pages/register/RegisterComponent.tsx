@@ -12,6 +12,7 @@ import CustomText from "../../components/text";
 import { colors } from "../../UI/Color";
 import { width } from "../../UI/Size";
 import registerStyle from "../../UI/styles/registerStyle";
+import { IS_IOS, embedGoogleURL } from "../../constants/appConstant";
 
 export default function RegisterComponent(props: RegisterComponentProps) {
   const {
@@ -30,6 +31,7 @@ export default function RegisterComponent(props: RegisterComponentProps) {
     isChecked,
     onModal,
   } = props;
+  const url = "https://www.africau.edu/images/default/sample.pdf";
   return (
     <WhiteContainer>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -91,7 +93,7 @@ export default function RegisterComponent(props: RegisterComponentProps) {
               <WebView
                 style={{ width: width * 0.7, zIndex: -1 }}
                 source={{
-                  uri: "https://www.africau.edu/images/default/sample.pdf",
+                  uri: IS_IOS ? url : `${embedGoogleURL}${url}`,
                 }}
               />
               <CustomButton
