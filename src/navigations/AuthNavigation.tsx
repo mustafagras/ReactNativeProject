@@ -15,17 +15,26 @@ export default function AuthNavigation() {
       <Stack.Screen
         name={LOGIN}
         component={LoginContainer}
-        options={{ title: `${tr[0].auth.signIn["title"]}` }}
+        options={{
+          headerTitle: `${tr[0].auth.signIn["title"]}`,
+          headerTitleAlign: "center",
+        }}
       />
       <Stack.Screen
         name={REGISTER}
         component={RegisterContainer}
-        options={{ title: `${tr[0].auth.signUp["title"]}` }}
+        options={{
+          headerTitle: `${tr[0].auth.signUp["title"]}`,
+          headerTitleAlign: "center",
+        }}
       />
       <Stack.Screen
         name={FORGOT_PASSWORD}
         component={ForgotPasswordContainer}
-        options={{ title: `${tr[0].auth.forgotPassword["title"]}` }}
+        options={{
+          headerTitle: `${tr[0].auth.forgotPassword["title"]}`,
+          headerTitleAlign: "center",
+        }}
       />
     </Stack.Navigator>
   );
