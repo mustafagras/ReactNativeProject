@@ -48,7 +48,8 @@ export default function App() {
   };
 
   useEffect(() => {
-    onGetFunc();
+    // onGetFunc();
+    // onGetFuncAsync();
     // onPostFunc();
     // onPostFuncAsync();
   }, []);
