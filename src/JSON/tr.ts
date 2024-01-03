@@ -77,6 +77,9 @@ const tr = [
       },
       eventList: {
         title: "Etkinlik Listesi",
+        title2: "Etkinlik Detay Listesi",
+        detailSee: "Detay Gör",
+        findButton: `Eğitim Ara${threeDot}`,
       },
       profile: {
         title: "Profil",

@@ -3,11 +3,10 @@ import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { navigationPage } from "../constants/navigationConstant";
 import HomeContainer from "../pages/home";
-import EducationListContainer from "../pages/education_list";
-import EventListContainer from "../pages/event_list";
+import EducationNavigation from "./educationNavigation";
+import EventNavigation from "./eventNavigation";
 import ProfileContainer from "../pages/profile";
 import tr from "../JSON/tr";
-import EducationNavigation from "./educationNavigation";
 
 const Tabs = createBottomTabNavigator();
 
@@ -82,16 +81,14 @@ export default function AppNavigation() {
         name={EDUCATION_LIST}
         component={EducationNavigation}
         options={{
-          headerTitle: `${tr[0].app.educationList["title"]}`,
           headerShown: false,
         }}
       />
       <Tabs.Screen
         name={EVENT_LIST}
-        component={EventListContainer}
+        component={EventNavigation}
         options={{
-          headerTitle: `${tr[0].app.eventList["title"]}`,
-          headerTitleAlign: "center",
+          headerShown: false,
         }}
       />
       <Tabs.Screen
