@@ -1,14 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { data } from "../../JSON/API/education";
-import EducationListComponent from "./EducationListComponent";
 import { navigationPage } from "../../constants/navigationConstant";
+import { useAppSettings } from "../../store/app";
+import { getEducationList } from "../../service";
+import EducationListComponent from "./EducationListComponent";
 
 export default function EducationListContainer() {
-  const [lastData, setLastData] = useState<any>(data);
-  const [searchText, setSearchText] = useState<string>("");
   const { navigate } = useNavigation();
   const { EDUCATION_DETAIL } = navigationPage;
+
+  const [data, setData] = useState<any>();
+  const [lastData, setLastData] = useState<any>(data);
+  const [searchText, setSearchText] = useState<string>("");
+  const toggleLoader = useAppSettings().toggleLoader;
+  const hideLoader = useAppSettings().hideLoader;
+
+  useEffect(() => {
+    getDataFunc();
+  }, []);
+
+  const getDataFunc = () => {
+    toggleLoader();
+    getEducationList().then((lastData) => {
+      hideLoader();
+      if (lastData) {
+        setData(lastData);
+        setLastData(lastData);
+      }
+    });
+  };
 
   const onSearch = (text: string) => {
     setSearchText(text);
