@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { colors } from "../Color";
 import { height } from "../Size";
 
-const educationDetailStyles = StyleSheet.create({
+const educationDetailStyle = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
@@ -28,4 +28,4 @@ const educationDetailStyles = StyleSheet.create({
   },
 });
 
-export default educationDetailStyles;
+export default educationDetailStyle;

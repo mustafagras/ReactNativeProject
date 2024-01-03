@@ -60,6 +60,11 @@ export interface EducationListProps {
   onDetail: () => void;
 }
 
+export interface EducationDetailProps {
+  isVisibleDesc: boolean;
+  setIsVisibleDesc: (params: boolean) => void;
+}
+
 export interface ProfileProps {
   onLogOut: () => void;
 }
@@ -114,6 +119,9 @@ export interface CustomListCardProps {
   timerTextStyle?: StyleProp<TextStyle>;
   descTextStyle?: StyleProp<TextStyle>;
   item: any;
+  label: string;
+  isDetail: boolean;
+  isMoreDetail?: boolean;
   onPress: () => void;
 }
 

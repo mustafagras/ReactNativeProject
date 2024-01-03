@@ -23,7 +23,12 @@ export default function EducationListComponent({
         data={data}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <CustomListCard item={item} onPress={onDetail} />
+          <CustomListCard
+            item={item}
+            label="app:educationList:detailSee"
+            isDetail={false}
+            onPress={onDetail}
+          />
         )}
         ListEmptyComponent={() => <EmptyComponent text={searchText} />}
       />

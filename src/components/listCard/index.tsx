@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text } from "react-native";
 import { CustomListCardProps } from "../../types";
-import { descMax, threeDot, titleMax } from "../../constants/formatString";
+import {
+  descMax,
+  detailDescMax,
+  threeDot,
+  titleMax,
+} from "../../constants/formatString";
 import CustomTextButton from "../textButton";
 import styles from "./listCardStyle";
 
 export default function CustomListCard({
   item,
+  label,
+  isDetail,
+  isMoreDetail,
   onPress,
   containerStyle,
   titleTextStyle,
@@ -22,9 +30,11 @@ export default function CustomListCard({
       <Text
         style={titleTextStyle !== undefined ? titleTextStyle : styles.title}
       >
-        {item.title
-          .substring(0, titleMax)
-          .concat(item.title.length > titleMax ? threeDot : "")}
+        {!isDetail
+          ? item.title
+              .substring(0, titleMax)
+              .concat(item.title.length > titleMax ? threeDot : "")
+          : item.title}
       </Text>
       <Text
         style={timerTextStyle !== undefined ? timerTextStyle : styles.timer}
@@ -32,11 +42,18 @@ export default function CustomListCard({
         Eğitimin Süresi: {item.timer} saat
       </Text>
       <Text style={descTextStyle !== undefined ? descTextStyle : styles.desc}>
-        {item.desc
-          .substring(0, descMax)
-          .concat(item.desc.length > descMax ? threeDot : "")}
+        {!isDetail &&
+          item.desc
+            .substring(0, descMax)
+            .concat(item.desc.length > descMax ? threeDot : "")}
+        {isDetail &&
+          (isMoreDetail
+            ? item.desc
+            : item.desc
+                .substring(0, detailDescMax)
+                .concat(item.desc.length > detailDescMax ? threeDot : ""))}
       </Text>
-      <CustomTextButton label="app:educationList:detailSee" onPress={onPress} />
+      <CustomTextButton label={label} onPress={onPress} />
     </View>
   );
 }
