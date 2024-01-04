@@ -6,4 +6,8 @@ export const apiConfig = {
   sliderDataGet: `${baseURL}sliderData.json`,
   partnersDataGet: `${baseURL}partnersData.json`,
   successStoriesDataGet: `${baseURL}successStoriesData.json`,
+  postRegister: `${baseURL}users.json`,
+  getLogin: `${baseURL}users.json`,
+  getTargetPassword: `${baseURL}users.json`,
+  patchTargetPassword: `${baseURL}users`,
 };
