@@ -67,6 +67,8 @@ export interface EducationListProps {
 export interface EducationDetailProps {
   isVisibleDesc: boolean;
   setIsVisibleDesc: (params: boolean) => void;
+  accordionActive?: number;
+  setAccordionActive: (params: number) => void;
 }
 
 export type EventListProps = {

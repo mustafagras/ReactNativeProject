@@ -75,6 +75,9 @@ const tr = [
         moreSee: "Devamını Gör",
         notMore: "Daha Az Gör",
         findButton: `Eğitim Ara${threeDot}`,
+        lesson: "İçerik",
+        certificate: "Sertifikalar",
+        career: "Kariyer",
       },
       eventList: {
         title: "Etkinlik Listesi",

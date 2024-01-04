@@ -26,6 +26,24 @@ const educationDetailStyle = StyleSheet.create({
     padding: "5%",
     gap: 10,
   },
+  titleButton: {
+    padding: 10,
+    backgroundColor: colors.red,
+    marginBottom: 10,
+  },
+  accordionTitle: {
+    color: colors.white,
+    fontWeight: "600",
+    fontSize: 16,
+  },
+  accordionContainer: {
+    width: "100%",
+    padding: "5%",
+    gap: 10,
+  },
+  dataContainer: {
+    width: "100%",
+  },
 });
 
 export default educationDetailStyle;
