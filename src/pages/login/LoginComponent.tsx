@@ -9,7 +9,7 @@ import CustomButton from "../../components/button";
 import { colors } from "../../UI/Color";
 
 export default function LoginComponent(props: LoginComponentProps) {
-  const { email, setEmail, password, setPassword, onNavigate, onLogin } = props;
+  const { onNavigate, onLogin, handleSubmit, control, errors } = props;
   const { REGISTER, FORGOT_PASSWORD } = navigationPage;
 
   return (
@@ -17,22 +17,24 @@ export default function LoginComponent(props: LoginComponentProps) {
       <LogoImage />
       <BoxContainer>
         <Input
-          value={email}
-          setValue={setEmail}
+          name="email"
+          control={control}
           placeHolder="auth:signIn:email"
           keyboardType="email-address"
+          errors={errors["email"]}
         />
         <Input
-          value={password}
-          setValue={setPassword}
+          name="password"
+          control={control}
           placeHolder="auth:signIn:password"
           secureTextEntry={true}
           keyboardType="default"
+          errors={errors["password"]}
         />
         <CustomButton
           tx="auth:signIn:login"
           color={colors.indianRed}
-          onPress={onLogin}
+          onPress={() => handleSubmit(onLogin)()}
         />
         <CustomButton
           tx="auth:signIn:register"

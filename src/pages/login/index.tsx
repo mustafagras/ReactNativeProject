@@ -1,11 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
+import { Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppSettings, useAppStore } from "../../store/app";
+import { onLoginService } from "../../service";
 import LoginComponent from "./LoginComponent";
 
+const schema = z.object({
+  email: z
+    .string({ required_error: "Lütfen geçerli bir karakter girin" })
+    .email("Email formatında olmak zorundadır!"),
+  password: z
+    .string({ required_error: "Lütfen geçerli bir karakter girin" })
+    .min(6, "Şifre en az 6 karakter olmalıdır!"),
+});
+
 export default function LoginContainer() {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
+    mode: "onChange",
+  });
+
   const navigation = useNavigation();
   const setIsLogin = useAppStore().setIsLogin;
 
@@ -20,22 +41,33 @@ export default function LoginContainer() {
     }, 1000);
   };
 
-  const onLogin = () => {
+  const onLogin = (data) => {
     toggleLoader();
-    setTimeout(() => {
+    onLoginService().then((res) => {
       hideLoader();
-      setIsLogin(true);
-    }, 1000);
+      if (res) {
+        const users = Object.values(res);
+        const user = users.find((user) => user.email === data.email);
+        if (user) {
+          if (user.password === data.password) {
+            setIsLogin(true);
+          } else {
+            Alert.alert("Şifrenizi kontrol edin!");
+          }
+        } else {
+          Alert.alert("Kullanıcı bulunamadı!");
+        }
+      }
+    });
   };
 
   return (
     <LoginComponent
-      email={email}
-      setEmail={setEmail}
-      password={password}
-      setPassword={setPassword}
       onNavigate={onNavigate}
       onLogin={onLogin}
+      control={control}
+      handleSubmit={handleSubmit}
+      errors={errors}
     />
   );
 }
