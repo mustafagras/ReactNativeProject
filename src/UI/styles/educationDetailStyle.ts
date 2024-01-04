@@ -44,6 +44,9 @@ const educationDetailStyle = StyleSheet.create({
   dataContainer: {
     width: "100%",
   },
+  card: {
+    paddingBottom: 10,
+  },
 });
 
 export default educationDetailStyle;

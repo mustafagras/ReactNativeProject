@@ -22,7 +22,7 @@ export default function EducationDetailComponent({
   const Card = ({ item }) => {
     return (
       <View>
-        <Text>{item.desc}</Text>
+        <Text style={educationDetailStyle.card}>{item.desc}</Text>
       </View>
     );
   };
