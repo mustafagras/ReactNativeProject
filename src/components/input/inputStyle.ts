@@ -9,6 +9,12 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     width: "90%",
   },
+  error: {
+    fontSize: 10,
+    color: colors.red,
+    width: "90%",
+    marginBottom: 10,
+  },
 });
 
 export default styles;

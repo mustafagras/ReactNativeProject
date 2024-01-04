@@ -2,6 +2,7 @@ import React from "react";
 import { Image, Modal, View, ScrollView, TouchableOpacity } from "react-native";
 import WebView from "react-native-webview";
 import { RegisterComponentProps } from "../../types";
+import { IS_IOS, embedGoogleURL } from "../../constants/appConstant";
 import WhiteContainer from "../../components/whiteContainer";
 import BoxContainer from "../../components/boxContainer";
 import LogoImage from "../../components/logoImage";
@@ -12,24 +13,17 @@ import CustomText from "../../components/text";
 import { colors } from "../../UI/Color";
 import { width } from "../../UI/Size";
 import registerStyle from "../../UI/styles/registerStyle";
-import { IS_IOS, embedGoogleURL } from "../../constants/appConstant";
 
 export default function RegisterComponent(props: RegisterComponentProps) {
   const {
-    fullName,
-    setFullName,
-    email,
-    setEmail,
-    phone,
-    setPhone,
-    password,
-    setPassword,
-    rePassword,
-    setRePassword,
     isVisible,
     setIsVisible,
     isChecked,
     onModal,
+    handleSubmit,
+    control,
+    errors,
+    onSubmit,
   } = props;
   const url = "https://www.africau.edu/images/default/sample.pdf";
   return (
@@ -38,33 +32,38 @@ export default function RegisterComponent(props: RegisterComponentProps) {
         <LogoImage />
         <BoxContainer>
           <Input
-            value={fullName}
-            setValue={setFullName}
+            name="fullName"
+            control={control}
             placeHolder="auth:signUp:fullName"
+            errors={errors["fullName"]}
           />
           <Input
-            value={email}
-            setValue={setEmail}
+            name="email"
+            control={control}
             placeHolder="auth:signUp:email"
             keyboardType="email-address"
+            errors={errors["email"]}
           />
           <Input
-            value={phone}
-            setValue={setPhone}
+            name="phone"
+            control={control}
             placeHolder="auth:signUp:phoneNumber"
             keyboardType="numeric"
+            errors={errors["phone"]}
           />
           <Input
-            value={password}
-            setValue={setPassword}
+            name="password"
+            control={control}
             placeHolder="auth:signUp:password"
             secureTextEntry={true}
+            errors={errors["password"]}
           />
           <Input
-            value={rePassword}
-            setValue={setRePassword}
+            name="rePassword"
+            control={control}
             placeHolder="auth:signUp:rePassword"
             secureTextEntry={true}
+            errors={errors["rePassword"]}
           />
           <CustomText tx="auth:signIn:policyInfo" />
           <CustomCheckbox
@@ -74,7 +73,7 @@ export default function RegisterComponent(props: RegisterComponentProps) {
           />
           <CustomButton
             tx={"auth:signUp:register"}
-            onPress={() => console.log()}
+            onPress={() => handleSubmit(onSubmit)()}
             color={colors.red}
           />
         </BoxContainer>
