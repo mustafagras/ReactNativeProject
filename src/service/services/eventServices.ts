@@ -10,7 +10,8 @@ export const getEventList = () => {
       return res.data;
     })
     .catch((err) => {
-      Alert.alert("servis çalışmadı");
+      console.log("getEventList", err);
+      Alert.alert("Servis çalışmadı");
       return false;
     });
 };

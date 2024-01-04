@@ -10,7 +10,8 @@ export const getEducationList = () => {
       return res.data;
     })
     .catch((err) => {
-      Alert.alert("servis çalışmadı");
+      console.log("getEducationList", err);
+      Alert.alert("Servis çalışmadı");
       return false;
     });
 };

@@ -10,7 +10,8 @@ export const getSliderData = () => {
       return res.data;
     })
     .catch((err) => {
-      Alert.alert("servis çalışmadı");
+      console.log("getSliderData", err);
+      Alert.alert("Servis çalışmadı");
       return false;
     });
 };
@@ -23,7 +24,8 @@ export const getPartnersData = () => {
       return res.data;
     })
     .catch((err) => {
-      Alert.alert("servis çalışmadı");
+      console.log("getPartnersData", err);
+      Alert.alert("Servis çalışmadı");
       return false;
     });
 };
@@ -36,7 +38,8 @@ export const getSuccessStoriesData = () => {
       return res.data;
     })
     .catch((err) => {
-      Alert.alert("servis çalışmadı");
+      console.log("getSuccessStoriesData", err);
+      Alert.alert("Servis çalışmadı");
       return false;
     });
 };
