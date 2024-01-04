@@ -54,7 +54,8 @@ const tr = [
       forgotPassword: {
         title: "Şifremi Unuttum",
         email: "E-posta",
-        sendCode: "Doğrulama Kodu Gönder",
+        newPassword: "Yeni Şifre Girin",
+        sendCode: "Şifreyi Değiştir",
       },
       signOut: {
         email: "E-posta: ",
