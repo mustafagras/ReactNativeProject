@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Alert } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -46,6 +47,7 @@ export default function RegisterContainer() {
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const toggleLoader = useAppSettings().toggleLoader;
   const hideLoader = useAppSettings().hideLoader;
+  const { goBack } = useNavigation();
 
   const onModal = () => {
     setIsChecked(true);
@@ -59,6 +61,7 @@ export default function RegisterContainer() {
         hideLoader();
         if (res) {
           Alert.alert("kayıt başarılı");
+          goBack();
         }
       });
     } else {
