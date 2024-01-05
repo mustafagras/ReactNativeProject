@@ -20,6 +20,8 @@ export type ChildrenProps = {
 export interface StoreType {
   isLogin: boolean;
   setIsLogin: (params: boolean) => void;
+  user: any;
+  setUser: (params: any) => void;
 }
 
 export interface LoginComponentProps {
@@ -81,6 +83,7 @@ export type EventListProps = {
 export type EventDetailsProps = {};
 
 export interface ProfileProps {
+  user: any;
   onLogOut: () => void;
 }
 

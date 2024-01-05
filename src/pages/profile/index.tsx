@@ -1,9 +1,10 @@
 import React from "react";
-import ProfileComponent from "./ProfileComponent";
 import { useAppSettings, useAppStore } from "../../store/app";
+import ProfileComponent from "./ProfileComponent";
 
 export default function ProfileContainer() {
   const setIsLogin = useAppStore().setIsLogin;
+  const user = useAppStore().user;
 
   const toggleLoader = useAppSettings().toggleLoader;
   const hideLoader = useAppSettings().hideLoader;
@@ -16,5 +17,5 @@ export default function ProfileContainer() {
     }, 1000);
   };
 
-  return <ProfileComponent onLogOut={onLogOut} />;
+  return <ProfileComponent user={user} onLogOut={onLogOut} />;
 }

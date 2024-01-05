@@ -31,6 +31,7 @@ export default function LoginContainer() {
 
   const navigation = useNavigation();
   const setIsLogin = useAppStore().setIsLogin;
+  const setUser = useAppStore().setUser;
 
   const toggleLoader = useAppSettings().toggleLoader;
   const hideLoader = useAppSettings().hideLoader;
@@ -53,6 +54,7 @@ export default function LoginContainer() {
         if (user) {
           if (user.password === data.password) {
             setIsLogin(true);
+            setUser(user);
           } else {
             Alert.alert("Şifrenizi kontrol edin!");
           }

@@ -26,4 +26,8 @@ export const useAppStore = create<StoreType>((set, get) => ({
   setIsLogin: (params) => {
     set({ isLogin: params });
   },
+  user: {},
+  setUser: (params) => {
+    set({ user: params });
+  },
 }));

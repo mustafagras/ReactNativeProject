@@ -7,14 +7,14 @@ import CustomButton from "../../components/button";
 import CustomText from "../../components/text";
 import profileStyle from "../../UI/styles/profileStyle";
 
-export default function ProfileComponent({ onLogOut }: ProfileProps) {
+export default function ProfileComponent({ user, onLogOut }: ProfileProps) {
   return (
     <View style={profileStyle.container}>
       <View style={profileStyle.redContainer}>
         <View style={[profileStyle.opacityRed, profileStyle.circle1]}></View>
         <View style={[profileStyle.opacityRed, profileStyle.circle2]}></View>
         <View style={[profileStyle.opacityRed, profileStyle.circle3]}></View>
-        <Text style={profileStyle.title}>{data.name}</Text>
+        <Text style={profileStyle.title}>{user.fullName}</Text>
       </View>
       <View style={profileStyle.userContainer}>
         <Image
@@ -25,8 +25,8 @@ export default function ProfileComponent({ onLogOut }: ProfileProps) {
       </View>
       <View style={profileStyle.subContainer}>
         <View style={profileStyle.infoContainer}>
-          <CustomText tx="auth:signOut:email">{data.email}</CustomText>
-          <CustomText tx="auth:signOut:phone">{data.phone}</CustomText>
+          <CustomText tx="auth:signOut:email">{user.email}</CustomText>
+          <CustomText tx="auth:signOut:phone">{user.phone}</CustomText>
           <CustomText tx="auth:signOut:address">{data.address}</CustomText>
         </View>
         <View>
