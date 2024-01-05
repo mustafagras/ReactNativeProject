@@ -12,12 +12,14 @@ import {
 import ForgotPaswordComponent from "./ForgotPaswordComponent";
 
 const schema = z.object({
-  email: z
-    .string({ required_error: "Geçerli bir karakter girin!" })
-    .email("Email formatında olmak zorundadır!"),
-  newPassword: z
-    .string({ required_error: "Geçerli bir karakter girin!" })
-    .min(6, "Şifre en az 6 karakterden oluşmalıdır!"),
+  email: z.coerce
+    .string({ required_error: "Geçersiz karakter girdiniz" })
+    .trim()
+    .email("Lütfen geçerli bir mail adresi giriniz"),
+  newPassword: z.coerce
+    .string({ required_error: "Geçersiz karakter girdiniz" })
+    .trim()
+    .min(6, { message: "Şifreniz en az 6 karakter olmalıdır" }),
 });
 
 export default function ForgotPasswordContainer() {

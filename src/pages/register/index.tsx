@@ -8,17 +8,28 @@ import { onRegister } from "../../service";
 import RegisterComponent from "./RegisterComponent";
 
 const schema = z.object({
-  fullName: z.string({ required_error: "Geçersiz karakter girdiniz" }),
-  email: z
+  fullName: z.coerce
     .string({ required_error: "Geçersiz karakter girdiniz" })
-    .email("Email formatında değil"),
-  phone: z.string({ required_error: "Telefon numarası sayılardan oluşmalı" }),
-  password: z
+    .trim()
+    .min(1, { message: "Bu alan zorunludur" }),
+  email: z.coerce
     .string({ required_error: "Geçersiz karakter girdiniz" })
-    .min(6, "Şifreniz en az 6 karakter olmalıdır"),
-  rePassword: z
+    .trim()
+    .email("Lütfen geçerli bir mail adresi giriniz"),
+  phone: z.coerce
+    .number({
+      required_error: "Geçersiz karakter girdiniz",
+      invalid_type_error: "Telefon numarası sayılardan oluşmalı",
+    })
+    .min(1, { message: "Bu alan zorunludur" }),
+  password: z.coerce
     .string({ required_error: "Geçersiz karakter girdiniz" })
-    .min(6, "Şifreniz en az 6 karakter olmalıdır"),
+    .trim()
+    .min(6, { message: "Şifreniz en az 6 karakter olmalıdır" }),
+  rePassword: z.coerce
+    .string({ required_error: "Geçersiz karakter girdiniz" })
+    .trim()
+    .min(6, { message: "Şifreniz en az 6 karakter olmalıdır" }),
 });
 
 export default function RegisterContainer() {

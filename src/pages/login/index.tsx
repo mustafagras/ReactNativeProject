@@ -9,12 +9,14 @@ import { onLoginService } from "../../service";
 import LoginComponent from "./LoginComponent";
 
 const schema = z.object({
-  email: z
-    .string({ required_error: "Lütfen geçerli bir karakter girin" })
-    .email("Email formatında olmak zorundadır!"),
-  password: z
-    .string({ required_error: "Lütfen geçerli bir karakter girin" })
-    .min(6, "Şifre en az 6 karakter olmalıdır!"),
+  email: z.coerce
+    .string({ required_error: "Geçersiz karakter girdiniz" })
+    .trim()
+    .email("Lütfen geçerli bir mail adresi giriniz"),
+  password: z.coerce
+    .string({ required_error: "Geçersiz karakter girdiniz" })
+    .trim()
+    .min(6, { message: "Şifreniz en az 6 karakter olmalıdır" }),
 });
 
 export default function LoginContainer() {
