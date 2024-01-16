@@ -1,6 +1,9 @@
 ### ReactNative ###
 # React Native Stack Base
 
+# Yarn
+yarn.lock
+
 # Expo
 .expo
 dist/
